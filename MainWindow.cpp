@@ -70,7 +70,7 @@ LRESULT CALLBACK WindowProc(//消息响应函数实现
 			rect.left = 0; rect.top = 280; rect.bottom = 310; rect.right = 150;
 			DrawText(hdc, L"@copyright:linzihan", -1, &rect, DT_SINGLELINE | DT_CENTER | DT_VCENTER);
 			rect.top += 20; rect.bottom += 20; rect.right += 150;
-			DrawText(hdc, L"Open Source At:www.github.com//linzihan", -1, &rect, DT_SINGLELINE | DT_CENTER | DT_VCENTER);
+			DrawText(hdc, L"Open Source At:https://github.com/linzihan-backforward/C-Curriculum-Design", -1, &rect, DT_SINGLELINE | DT_CENTER | DT_VCENTER);
 			HPEN pen = CreatePen(PS_SOLID, 2, RGB(200, 100, 20));//创建笔  
 																 // 将笔选到DC中  
 			auto oldObj = SelectObject(ps.hdc, pen);
