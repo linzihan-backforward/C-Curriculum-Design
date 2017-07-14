@@ -489,7 +489,9 @@ bool deleteRoute(TCHAR rNum[]) {
 			if (psv == NULL) ps = psv;
 			else ps = psv->nextStation;
 			while (ps != NULL) {
-				ptruck ptv = psv->headTruck, pt = ptv->nextTruck;
+				ptruck ptv = psv->headTruck, pt;
+				if(ptv==NULL) pt= ptv;
+				else pt = ptv->nextTruck;
 				while (pt != NULL) {
 					free(ptv);
 					ptv = pt;
@@ -501,7 +503,9 @@ bool deleteRoute(TCHAR rNum[]) {
 				ps = ps->nextStation;
 			}
 			if (psv != NULL) {
-				ptruck ptv = psv->headTruck, pt = ptv->nextTruck;
+				ptruck ptv = psv->headTruck, pt;
+				if (ptv == NULL) pt = ptv;
+				else pt = ptv->nextTruck;
 				while (pt != NULL) {
 					free(ptv);
 					ptv = pt;
@@ -525,7 +529,9 @@ bool deleteStation(TCHAR sNum[]) {
 	proute tail = head;
 	bool flag = false;
 	while (tail != NULL) {
-		pstation ps = tail->headStation,psv=tail->headStation;
+		pstation psv = tail->headStation, ps;
+		if(psv==NULL)	ps=psv;
+		else ps = psv->nextStation;
 		while (ps != NULL) {
 			if (wcscmp(ps->stationNum, sNum) == 0) {
 				if (ps == tail->headStation) tail->headStation = ps->nextStation;
@@ -557,7 +563,9 @@ bool deleteTruck(TCHAR tNum[]) {
 	while (tail != NULL) {
 		pstation ps = tail->headStation;
 		while (ps != NULL) {
-			ptruck pt = ps->headTruck,ptv=ps->headTruck;
+			ptruck ptv = ps->headTruck, pt;
+			if(ptv==NULL) pt= ptv;
+			else pt = ptv->nextTruck;
 			while (pt != NULL) {
 				if (wcscmp(pt->truckNum, tNum) == 0) {
 					if (pt == ps->headTruck) {
