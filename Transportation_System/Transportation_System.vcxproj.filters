@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="MainWindow.cpp">
+    <ClCompile Include="MainWindow.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="transport1.cpp">
+    <ClCompile Include="transport1.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

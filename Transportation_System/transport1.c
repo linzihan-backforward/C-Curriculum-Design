@@ -134,7 +134,7 @@ bool getTruckData(_In_ HWND hdlg, _In_ WPARAM wParam, _Out_ ptruck temp) {
 	return true;
 }
 bool insertStation(pstation nowStation) {
-	pstation pr = (pstation)malloc(sizeof(Station));
+	pstation pr = (pstation)malloc(sizeof(station));
 	copyStation(pr,nowStation);
 	proute tail = head;
 	bool flag = false;
@@ -161,7 +161,7 @@ bool insertStation(pstation nowStation) {
 	else return true;
 }
 bool insertStation2(pstation nowStation,TCHAR *previous) {
-	pstation pr = (pstation)malloc(sizeof(Station));
+	pstation pr = (pstation)malloc(sizeof(station));
 	copyStation(pr, nowStation);
 	proute tail = head;
 	bool flag = false;
@@ -193,7 +193,7 @@ bool insertStation2(pstation nowStation,TCHAR *previous) {
 	else return true;
 }
 bool insertRoute(proute nowRoute) {
-	proute pr = (proute)malloc(sizeof(Route));
+	proute pr = (proute)malloc(sizeof(route));
 	copyRoute(pr,nowRoute);
 	if (head == NULL) 
 		head = pr;
@@ -204,7 +204,7 @@ bool insertRoute(proute nowRoute) {
 		return true;
 }
 bool insertTruck(ptruck nowTruck) {
-	ptruck pr = (ptruck)malloc(sizeof(Truck));
+	ptruck pr = (ptruck)malloc(sizeof(truck));
 	copyTruck(pr,nowTruck);
 	bool flag = false;
 	proute tail = head;

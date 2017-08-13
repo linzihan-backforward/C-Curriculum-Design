@@ -88,8 +88,10 @@ LRESULT CALLBACK WindowProc(//消息响应函数实现
 			HDC hdcMem;
 			hdcMem = CreateCompatibleDC(hdc);  //创建一个与指定设备兼容的内存设备上下文环境  
 			hbmp = (HBITMAP)LoadImage(NULL, L"picture/华科校徽.bmp", IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE | LR_CREATEDIBSECTION);
+			
+			//if(hbmp!=NULL) MessageBox(hwnd, L"已成功保存", L"提醒", MB_OK | MB_ICONINFORMATION);
 			GetObject(hbmp, sizeof(BITMAP), &bmp);  //得到一个位图对象  
-
+			
 			SelectObject(hdcMem, hbmp);
 			StretchBlt(hdc, 380, 0, bmp.bmWidth/4*3, bmp.bmHeight/4*3, hdcMem,0,0, bmp.bmWidth, bmp.bmHeight, SRCCOPY);        //显示位图  
 

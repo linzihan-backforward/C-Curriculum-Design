@@ -4,6 +4,7 @@
 #include<stdlib.h>
 #include<Windows.h>
 #include<wingdi.h>
+#include<stdbool.h>
 #define _CRT_SECURE_NO_WARNINGS
 typedef struct Route {
 	TCHAR routNum[6];//Â·Ïß±àºÅ
